@@ -1,0 +1,10 @@
+.uu-btn {
+    background-color: var(--uu-yellow);
+    color: black;
+    border: none;
+    padding: 8px 16px;
+}
+
+.uu-btn:disabled {
+    background-color: #555;
+}

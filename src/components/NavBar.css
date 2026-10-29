@@ -1,0 +1,21 @@
+.uu-yellow {
+    color: #000;
+    background-color: #ffcd00;
+}
+
+.nav-btn {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-right: 0.5rem;
+    min-width: 10em;
+    text-align: center;
+}
+
+.go-back-btn {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 80%;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+}

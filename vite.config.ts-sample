@@ -1,0 +1,28 @@
+import {defineConfig} from 'vite'
+import react from '@vitejs/plugin-react'
+
+// The Ricgraph REST API, as written in the API reference: "<server>/api".
+// Used by the development server (npm run dev) only. Pick one:
+// const RICGRAPH_API = 'https://explorer.ricgraph.eu/api';
+const RICGRAPH_API = 'http://127.0.0.1:3030/api';
+
+// https://vite.dev/config/
+export default defineConfig({
+    plugins: [react()],
+    server: {
+        proxy: {
+            // The frontend requests "/api/person/search" etc.
+            // from the dev server, which forwards them to RICGRAPH_API.
+            // The target already ends in "/api", so the leading
+            // "/api" of the request is removed first
+            // (otherwise the backend would receive
+            // "/api/api/person/search").
+            '/api': {
+                target: RICGRAPH_API,
+                changeOrigin: true,
+                secure: true,
+                rewrite: (path) => path.replace(/^\/api/, ''),
+            }
+        }
+    }
+})

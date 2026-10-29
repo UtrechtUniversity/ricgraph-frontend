@@ -1,0 +1,65 @@
+# Do not store config files on GitHub
+vite.config.ts
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+dist-ssr/
+build/
+*.local
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Vite / tooling caches
+.vite/
+.eslintcache
+.cache/
+.parcel-cache/
+
+# Tests and coverage
+coverage/
+.nyc_output/
+
+# Environment files (keep an .env.example in git if you add one)
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Package manager leftovers (package-lock.json IS committed, for reproducible installs)
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.pnpm-store/
+
+# Editors and IDEs
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+
+# Operating system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini

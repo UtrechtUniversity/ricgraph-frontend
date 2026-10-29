@@ -1,0 +1,47 @@
+:root {
+    --uu-yellow: #ffcd00;
+    --bs-body-font-size: 14px;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* This is to make sure that the table with the logo's on
+ * the homepage is correctly shown, without including w3.css.
+ * Including w3.css might mess up bootstrap, so we do not
+ * want that.
+ */
+.w3-row-padding {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.w3-third {
+    width: 33.333%;
+    box-sizing: border-box;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.w3-margin-top {
+    margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+    .w3-third {
+        width: 100%;
+    }
+}

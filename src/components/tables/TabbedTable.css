@@ -1,0 +1,13 @@
+.tabbed-table .nav-link {
+    border-color: rgba(0, 0, 0, 0.2) !important;
+    color: #000;
+}
+
+.tabbed-table .nav-link.active {
+    background-color: #f3965e !important;
+}
+
+.tabbed-table .nav-link:hover,
+.tabbed-table .nav-link.active:hover {
+    background-color: #b0b0b0 !important;
+}

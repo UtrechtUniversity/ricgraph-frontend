@@ -1,0 +1,75 @@
+.table.custom-table {
+    --bs-table-border-color: #495057;
+    border-color: #495057;
+    /* Column widths follow their content instead of all being equal. */
+    table-layout: auto;
+    width: 100%;
+}
+
+.table.custom-table td {
+    overflow-wrap: break-word;
+}
+
+/* Only columns that hold long strings without spaces (identifiers, DOIs, URLs) may break anywhere */
+.table.custom-table td.col-value {
+    overflow-wrap: anywhere;
+    min-width: 10rem;
+    max-width: 15rem;
+}
+
+/* Set different widths for the url_ columns */
+.table.custom-table td.col-url_main {
+    overflow-wrap: anywhere;
+    min-width: 7rem;
+}
+
+.table.custom-table td:is(.col-url_other, .col-url_asset) {
+    overflow-wrap: anywhere;
+    min-width: 9rem;
+}
+
+/* Bulleted lists inside cells (url_*, _source, ...): same narrow indent for all, no extra space below. */
+.table.custom-table td ul {
+    margin-bottom: 0;
+    padding-left: 1rem;
+}
+
+.table.custom-table > thead > tr > th {
+    background-color: var(--uu-yellow);
+    /* Column titles stay on one line; the column is at least as wide as its title. */
+    white-space: nowrap;
+}
+
+.table.custom-table .sort-header-btn {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.table.custom-table .sort-header-btn:hover {
+    text-decoration: underline;
+}
+
+.table.custom-table .sort-header-btn:focus-visible {
+    outline: 2px solid #212529;
+    outline-offset: 2px;
+}
+
+.table.custom-table .value-link {
+    color: #0b5ed7;
+    text-decoration: underline;
+}
+
+.table.custom-table .value-link:hover {
+    color: #084298;
+}
+
+.table.custom-table > :not(caption) > * > * {
+    border-color: #495057;
+    border-width: 1px;
+}
