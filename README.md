@@ -19,7 +19,9 @@ independent of Ricgraph itself.
 You can use it to 
 create your own frontend user interface for Ricgraph,
 that uses the Ricgraph REST API. It is
-written in TypeScript and uses React with a Bootstrap theme.
+written in [TypeScript](https://www.typescriptlang.org) 
+and uses [React](https://react.dev) with a 
+[Bootstrap theme](https://react-bootstrap.netlify.app).
 
 
 ### Why this code is not used to replace the Ricgraph backend user interface
@@ -30,7 +32,7 @@ user interface, for the following reasons:
 - Some functionality of this frontend is slower than
   the same functionality in the Ricgraph backend user interface.
 - It might contain bugs.
-- Since my knowledge of React and TypeScript is limited, I do not
+- Since my knowledge of TypeScript and React is limited, I do not
   feel comfortable in maintaining it.
 - For some other reasons, read the disclaimer below.
 
@@ -47,11 +49,12 @@ students](https://docs.ricgraph.eu/ricgraph_outreach.html#ricgraph-projects-with
 My knowledge of TypeScript and React is not sufficient to be
 able to determine whether the resulting code
 follows generally accepted guidelines
-for writing React and TypeScript using a Bootstrap theme.
+for writing TypeScript and React using a Bootstrap theme.
 Also, I don't know whether the structure
 or the componentization that this code uses
 is a sensible one.
 Please keep this in mind when you reuse this code.
+
 Let me know what you are planning to develop,
 and please share it with the community.
 I hope it may inspire you to
@@ -71,11 +74,38 @@ is used. Instructions for other development environments may differ.
 
 The frontend has been tested on Ricgraph v3.4 and v3.5.
 
-- Download the zip file from this GitHub repository. Unzip it in a directory.
-- Open WebStorm and choose "Open...". Do not use "New Project", 
-  because it will overwrite package.json.
-- In the "Open..." dialog, select the directory where your have unzipped
-  the zip file above.
+There are several methods to install using WebStorm.
+
+- Using a zip file.
+  - Download the zip file from this GitHub repository. Use the green button
+    at the top right `<> Code`, and choose *Download ZIP* at the bottom
+    of the pop-up window.
+  - Unzip it in a directory.
+  - Open WebStorm and choose "Open...". Do not use "New Project", 
+    because it will overwrite package.json.
+  - In the "Open..." dialog, select the directory where your have unzipped
+    the zip file above.
+- By cloning this GitHub repository in WebStorm.
+
+  Two things may happen after you have started WebStorm (by e.g. clicking on
+  its icon).
+  - You get the WebStorm opening screen:
+    - Make sure that *Version control* is `Git`.
+    - In field *URL*,
+      type `https://github.com/UtrechtUniversity/ricgraph-frontend`.
+    - You may want to change the directory in field *Directory*.
+    - Click *Clone*.
+  - You get a previously opened repository:
+    - From the menubar, 
+      choose *File → New → Project from Version Control...*.
+    - Make sure that *Version control* is `Git`.
+    - In field *URL*, 
+      type `https://github.com/UtrechtUniversity/ricgraph-frontend`.
+    - You may want to change the directory in field *Directory*.
+    - Click *Clone*.
+
+Then continue with the following steps:
+
 - WebStorm may ask you to install the dependencies. If so, answer 'yes'.
 - If not, type `npm install` in WebStorms terminal.
 - Copy file *vite.config.ts-sample* to *vite.config.ts*. 
@@ -83,7 +113,7 @@ The frontend has been tested on Ricgraph v3.4 and v3.5.
 
 ### How to set the link to the Ricgraph backend
 To prevent CORS issues, a proxy is set up in this project, 
-so you can actually make api requests to your running backend. 
+so you can actually make REST API requests to a running backend. 
 If your Ricgraph backend is running locally and on port 3030, 
 there should be no issues. If not, you will need to modify
 file *vite.config.ts*.
@@ -91,7 +121,7 @@ file *vite.config.ts*.
 By default, the frontend will access the backend on
 [http://127.0.0.1:3030/api](http://127.0.0.1:3030/api).
 This will only work if you have installed your own version of Ricgraph.
-You may also want to use another backend, such as the backend provided
+You may prefer to use an existing backend, such as the backend provided
 with the [Pilot project Open Ricgraph demo 
 server](https://www.ricgraph.eu/pilot-project-open-ricgraph-demo-server.html).
 
@@ -100,7 +130,7 @@ You can set your Ricgraph backend in file *vite.config.ts* and modify the line
 const RICGRAPH_API = 'http://127.0.0.1:3030/api';
 ```
 to fit your backend.
-You can find the API server of the open Ricgraph demo server
+You can find the REST API server of the open Ricgraph demo server
 by going to the page
 [Pilot project Open Ricgraph demo
 server](https://www.ricgraph.eu/pilot-project-open-ricgraph-demo-server.html).
@@ -114,7 +144,8 @@ on "API servers". Put that value instead of
 
 ### How to run
 - Type `npm run dev` in WebStorms terminal.
-- You can access the frontend on [http://localhost:5173](http://localhost:5173).
+- You can access the frontend in your favorite web browser
+  on [http://localhost:5173](http://localhost:5173).
 
 The page will reload if you make edits to the code.
 You will also see any lint errors in the console.
@@ -166,4 +197,4 @@ The build is minified, and it includes the hashes,
 so your app is ready to be deployed.
 
 For deploying read [Deploy your
-  application](https://www.jetbrains.com/help/webstorm/deploying-applications.html), or ask your favorite LLM.
+  application](https://www.jetbrains.com/help/webstorm/deploying-applications.html), or ask your favorite AI chatbot.
