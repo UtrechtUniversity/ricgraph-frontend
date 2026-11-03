@@ -6,19 +6,11 @@ interface TableCellProps {
     onClickValue?: (entry: Record<string, any>) => void;
 }
 
-// No link: empty cell. One link: "<column> link". More links: a bulleted list with
+// No link: empty cell. One or more links: always a bulleted list with
 // "<column>1 link", "<column>2 link", ...
 function renderUrlCell(column: string, value: unknown) {
     const urls = extractUrls(value);
     if (urls.length === 0) return null;
-
-    if (urls.length === 1) {
-        return (
-            <a href={urls[0]} target={"_blank"} rel={"noopener"}>
-                {`${column} link`}
-            </a>
-        );
-    }
 
     return (
         <ul>
